@@ -1,0 +1,3 @@
+# ignore Vivado files
+DM_cache.cache*
+DM_cache.xpr
