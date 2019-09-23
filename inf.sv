@@ -10,5 +10,13 @@ package memory_sub_system_inf;
         modport cpu();
         modport ctrl();
     endinterface
+
+    interface cpu_cache();
+    parameter ADDR_LENGTH   = 16;
+        wire [ADDR_LENGTH-1:0]  addr;
+
+        modport cpu();
+        modport cache();
+    endinterface
 endpackage
 

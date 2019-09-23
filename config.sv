@@ -13,6 +13,7 @@ package memory_sub_system_param;
 
     localparam ADDR_LENGTH      = $clog2(MEMORY_SIZE);      // Width of address bus
     localparam INDEX_LENGTH     = NUM_CACHE_LINES;
+    localparam TAG_LENGTH       = MEMORY_SIZE / CACHE_SIZE;
 
 endpackage
 
