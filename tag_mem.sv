@@ -13,7 +13,7 @@ module tag_mem(
     output [TAG_LENGTH-1:0]     tag_out
     );
 
-    reg [TAG_LENGTH-1:0][NUM_CACHE_LINES-1:0] tag_memory;
+    reg [NUM_CACHE_LINES-1:0][TAG_LENGTH-1:0] tag_memory;
 
     reg [TAG_LENGTH-1:0] tag_out;
 
