@@ -35,8 +35,8 @@ module tb_tag_mem();
 
         for (int i=0; i<NUM_CACHE_LINES; i++) begin
             #20
-            index   = $urandom_range(0, INDEX_LENGTH ** 2);
-            tag_in  = $urandom_range(0, TAG_LENGTH ** 2);
+            index   = i;
+            tag_in  = $urandom_range(1, TAG_LENGTH ** 2);
         end
 
         #20
