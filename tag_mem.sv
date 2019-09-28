@@ -1,21 +1,25 @@
 // Content          : Tag memory
 // Author           : Isuru Rathnayaka
-// Last Modified    : 2019.09.22
+// Last Modified    : 2019.09.28
 
 import memory_sub_system_param::*;
 
-module tag_mem(
+module tag_mem #(
+    parameter byte INDEX_LEN        = INDEX_LENGTH,
+    parameter byte TAG_LEN          = TAG_LENGTH,
+    parameter integer NUM_CACHE_L   = NUM_CACHE_LINES
+    )(
     input                       clk,  // TODO
     input                       resetn, //TODO
     input                       write,
-    input [INDEX_LENGTH-1:0]    index,
-    input [TAG_LENGTH-1:0]      tag_in,
-    output [TAG_LENGTH-1:0]     tag_out
+    input [INDEX_LEN-1:0]       index,
+    input [TAG_LEN-1:0]         tag_in,
+    output [TAG_LEN-1:0]        tag_out
     );
 
-    reg [NUM_CACHE_LINES-1:0][TAG_LENGTH-1:0] tag_memory;
+    reg [NUM_CACHE_L-1:0][TAG_LEN-1:0] tag_memory;
 
-    reg [TAG_LENGTH-1:0] tag_out;
+    reg [TAG_LEN-1:0] tag_out;
 
     always_ff @(posedge clk)
     begin

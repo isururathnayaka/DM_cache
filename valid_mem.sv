@@ -1,18 +1,22 @@
 // Content          : Vaild memory
 // Author           : Isuru Rathnayaka
-// Last Modified    : 2019.09.23
+// Last Modified    : 2019.09.28
 
 import memory_sub_system_param::*;
 
-module valid_mem(
+module valid_mem #(
+    parameter byte INDEX_LEN        = INDEX_LENGTH,
+    parameter byte TAG_LEN          = TAG_LENGTH,
+    parameter integer NUM_CACHE_L   = NUM_CACHE_LINES
+    )(
     input                       clk,  // TODO
     input                       resetn, //TODO
     input                       write,
-    input [INDEX_LENGTH-1:0]    index,
+    input [INDEX_LEN-1:0]    index,
     output                      valid_out
     );
 
-    reg [NUM_CACHE_LINES-1:0]   valid_memory;
+    reg [NUM_CACHE_L-1:0]   valid_memory;
 
     reg valid_out;
 
