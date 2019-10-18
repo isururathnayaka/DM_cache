@@ -17,9 +17,9 @@ module tag_mem #(
     output [TAG_LEN-1:0]        tag_out
     );
 
-    reg [NUM_CACHE_L-1:0][TAG_LEN-1:0] tag_memory;
+    logic [NUM_CACHE_L-1:0][TAG_LEN-1:0] tag_memory;
 
-    reg [TAG_LEN-1:0] tag_out;
+    logic [TAG_LEN-1:0] tag_out;
 
     always_ff @(posedge clk)
     begin

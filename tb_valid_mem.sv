@@ -7,10 +7,10 @@
 import memory_sub_system_param::*;
 
 module tb_valid_mem();
-    reg                         clk;
-    reg                         resetn;
-    reg                         write;
-    reg     [INDEX_LENGTH-1:0]  index;
+    logic                       clk;
+    logic                       resetn;
+    logic                       write;
+    logic   [INDEX_LENGTH-1:0]  index;
     wire                        valid_out;
 
 

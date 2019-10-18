@@ -16,9 +16,9 @@ module valid_mem #(
     output                      valid_out
     );
 
-    reg [NUM_CACHE_L-1:0]   valid_memory;
+    logic [NUM_CACHE_L-1:0]     valid_memory;
 
-    reg valid_out;
+    logic valid_out;
 
     always_ff @(posedge clk)
     begin

@@ -7,11 +7,11 @@
 import memory_sub_system_param::*;
 
 module tb_tag_mem();
-    reg                         clk;
-    reg                         resetn;
-    reg                         write;
-    reg     [INDEX_LENGTH-1:0]  index;
-    reg     [TAG_LENGTH-1:0]    tag_in;
+    logic                       clk;
+    logic                       resetn;
+    logic                       write;
+    logic   [INDEX_LENGTH-1:0]  index;
+    logic   [TAG_LENGTH-1:0]    tag_in;
     wire    [TAG_LENGTH-1:0]    tag_out;
 
 
