@@ -1,6 +1,6 @@
 // Content          : Cache memory
 // Author           : Isuru Rathnayaka
-// Last Modified    : 2019.09.28
+// Last Modified    : 2019.10.20
 
 import memory_sub_system_param::*;
 
@@ -23,7 +23,7 @@ module cache #(
     output [CACHE_L_SIZE-1:0]   dout
     );
 
-    localparam WORD_OFFSET = ;      // offset for word write in case of a cache write TODO
+    var int word_offset = offset;      // offset for word write in case of a cache write TODO
 
     logic [NUM_CACHE_L-1:0][CACHE_L_SIZE-1:0] cache_memory;
 
@@ -36,12 +36,11 @@ module cache #(
         end
         else begin
             if (write) begin
-                cache_memory[index] = din;
                 if (select) begin
                     cache_memory     = mem_read;     // select == 1, memory read
                 end
                 else begin
-                    cache_memory[]     = mem_write;    // memory write TODO
+                    cache_memory     = mem_write;    // memory write TODO
                 end
             end
             else begin
